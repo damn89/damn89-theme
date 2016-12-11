@@ -1,0 +1,218 @@
+* {
+  text-decoration: none;
+  font-size: 1em;
+  outline: none;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-size: 15px;
+}
+
+code, kbd, samp, pre, tt, var, textarea, 
+input, select, isindex, listing, xmp, plaintext {
+  white-space: normal;
+  font-size: 1em;
+  font: inherit;
+}
+
+dfn, i, cite, var, address, em { 
+  font-style: normal; 
+}
+
+th, b, strong, h1, h2, h3, h4, h5, h6 { 
+  font-weight: normal; 
+}
+
+a, img, a img, iframe, form, fieldset, 
+abbr, acronym, object, applet, table {
+  border: none; 
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption, th, td, center { 
+  vertical-align: top;
+  text-align: left;
+}
+body { 
+  background: white; 
+  line-height: 1; 
+  color: black; 
+}
+
+q { 
+  quotes: "" ""; 
+}
+
+ul, ol, dir, menu { 
+  list-style: none; 
+}
+
+sub, sup { 
+  vertical-align: baseline; 
+}
+
+a { 
+  color: inherit; 
+}
+
+hr { 
+  display: none; 
+}
+
+
+blink { 
+  text-decoration: none; 
+}
+
+nobr { 
+  white-space: normal; 
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+html {
+  position: relative;
+
+  #wpadminbar {
+    @media (max-width: 780px){
+      position: absolute;
+      top: -46px;     
+    }
+
+  }
+}
+
+
+
+body {
+  transition: transform 0.5s ease-in-out; 
+  width: 100%;
+  height: 100%;
+  left: 0;
+  &.open {
+    transform: translateX(-50%);
+    #burger-menu {
+
+      span {
+        height: 0;
+        &:before {
+          transform: rotate(45deg);
+          top: 100%;
+        }
+
+        &:after {
+          transform: rotate(-45deg);
+          top: 100%;
+        }
+      }
+    }
+
+    #wpadminbar {
+      top: -46px;
+    }
+
+    nav {
+      display: block;
+      position: relative;
+      right: -100%;
+      background: red;
+      position: relative;
+
+      a {
+        @media (max-width: 768px){
+          display: block;
+        }
+      }
+      &:after {
+        content: '';
+        height: 1000000000000000px;
+        background: red;
+        width: 100%;
+        display: block;
+      }
+    }
+
+  }
+}
+
+header {
+  position: relative;
+  height: 50px;
+}
+
+.wrapper {
+  width: 90%;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+
+
+//#### MIXINS #####
+
+
+
+// put position relavtiv on parent and height 100%
+
+@mixin background-image-cover {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+}
+
+@mixin burger($width, $height, $color, $br){
+  width: $width;
+  height: $height;
+  display: block;
+  background: $color;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: $br;
+
+  &:before {
+    content: "";
+    width: $width;
+    height: $height;
+    display: block;
+    background: $color;
+    position: absolute;
+    top: 200%;
+    border-radius: $br;
+  }
+  &:after {
+    content: "";
+    width: $width;
+    height: $height;
+    display: block;
+    background: $color;
+    position: absolute;
+    top: -200%;
+    border-radius: $br;
+  }
+}
+
+@mixin center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+
+
+

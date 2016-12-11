@@ -1,0 +1,27 @@
+// variables 
+
+
+@import "reset";
+
+
+
+
+#burger-menu {
+  position: absolute;
+  right: 0;
+  display: block;
+  height: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  @media (min-width: 781px){
+    display: none;
+  }
+  span {
+    @include burger(25px, 4px, black, 5px);
+  }
+}
+
+
+
+
