@@ -1,0 +1,184 @@
+* {
+  text-decoration: none;
+  font-size: 1em;
+  outline: none;
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 15px; }
+
+code, kbd, samp, pre, tt, var, textarea,
+input, select, isindex, listing, xmp, plaintext {
+  white-space: normal;
+  font-size: 1em;
+  font: inherit; }
+
+dfn, i, cite, var, address, em {
+  font-style: normal; }
+
+th, b, strong, h1, h2, h3, h4, h5, h6 {
+  font-weight: normal; }
+
+a, img, a img, iframe, form, fieldset,
+abbr, acronym, object, applet, table {
+  border: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+caption, th, td, center {
+  vertical-align: top;
+  text-align: left; }
+
+body {
+  background: white;
+  line-height: 1;
+  color: black; }
+
+q {
+  quotes: "" ""; }
+
+ul, ol, dir, menu {
+  list-style: none; }
+
+sub, sup {
+  vertical-align: baseline; }
+
+a {
+  color: inherit; }
+
+hr {
+  display: none; }
+
+blink {
+  text-decoration: none; }
+
+nobr {
+  white-space: normal; }
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto; }
+
+html {
+  position: relative; }
+  @media (max-width: 780px) {
+    html #wpadminbar {
+      position: absolute;
+      top: -46px; } }
+
+body {
+  -webkit-transition: -webkit-transform 0.5s ease-in-out;
+  transition: -webkit-transform 0.5s ease-in-out;
+  -o-transition: -o-transform 0.5s ease-in-out;
+  -moz-transition: transform 0.5s ease-in-out, -moz-transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out, -moz-transform 0.5s ease-in-out, -o-transform 0.5s ease-in-out;
+  width: 100%;
+  height: 100%;
+  left: 0; }
+  body.open {
+    -webkit-transform: translateX(-50%);
+       -moz-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+         -o-transform: translateX(-50%);
+            transform: translateX(-50%); }
+    body.open #burger-menu span {
+      height: 0; }
+      body.open #burger-menu span:before {
+        -webkit-transform: rotate(45deg);
+           -moz-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+             -o-transform: rotate(45deg);
+                transform: rotate(45deg);
+        top: 100%; }
+      body.open #burger-menu span:after {
+        -webkit-transform: rotate(-45deg);
+           -moz-transform: rotate(-45deg);
+            -ms-transform: rotate(-45deg);
+             -o-transform: rotate(-45deg);
+                transform: rotate(-45deg);
+        top: 100%; }
+    body.open #wpadminbar {
+      top: -46px; }
+    body.open nav {
+      display: block;
+      position: relative;
+      right: -100%;
+      background: red;
+      position: relative; }
+      @media (max-width: 768px) {
+        body.open nav a {
+          display: block; } }
+      body.open nav:after {
+        content: '';
+        height: 1000000000000000px;
+        background: red;
+        width: 100%;
+        display: block; }
+
+header {
+  position: relative;
+  height: 50px; }
+
+.wrapper {
+  width: 90%;
+  max-width: 1080px;
+  margin: 0 auto; }
+
+#burger-menu {
+  position: absolute;
+  right: 0;
+  display: block;
+  height: 100%;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+     -moz-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+       -o-transform: translateY(-50%);
+          transform: translateY(-50%);
+  cursor: pointer; }
+  @media (min-width: 781px) {
+    #burger-menu {
+      display: none; } }
+  #burger-menu span {
+    width: 25px;
+    height: 4px;
+    display: block;
+    background: black;
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+       -moz-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+         -o-transform: translateY(-50%);
+            transform: translateY(-50%);
+    -webkit-border-radius: 5px;
+       -moz-border-radius: 5px;
+            border-radius: 5px; }
+    #burger-menu span:before {
+      content: "";
+      width: 25px;
+      height: 4px;
+      display: block;
+      background: black;
+      position: absolute;
+      top: 200%;
+      -webkit-border-radius: 5px;
+         -moz-border-radius: 5px;
+              border-radius: 5px; }
+    #burger-menu span:after {
+      content: "";
+      width: 25px;
+      height: 4px;
+      display: block;
+      background: black;
+      position: absolute;
+      top: -200%;
+      -webkit-border-radius: 5px;
+         -moz-border-radius: 5px;
+              border-radius: 5px; }
