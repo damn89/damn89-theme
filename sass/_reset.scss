@@ -82,15 +82,8 @@ html {
   position: relative;
   width: 100%;
   height: 100%;
-
-  #wpadminbar {
-    @media (max-width: 780px){
-      position: absolute;
-      top: -46px;     
-    }
-
-  }
 }
+
 
 
 
@@ -99,34 +92,15 @@ body {
   width: 100%;
   height: 100%;
   left: 0;
-  &.open {
-    transform: translateX(-50%);
-    #burger-menu {
 
-      span {
-        height: 0;
-        &:before {
-          transform: rotate(45deg);
-          top: 100%;
-        }
-
-        &:after {
-          transform: rotate(-45deg);
-          top: 100%;
-        }
-      }
-    }
-
-    #wpadminbar {
-      top: -46px;
-    }
-
+  @media(max-width: 768px){
     nav {
       display: block;
       position: relative;
       right: -100%;
-      background: red;
       position: relative;
+      z-index: -1;
+
 
       a {
         @media (max-width: 768px){
@@ -141,9 +115,31 @@ body {
         background: inherit;
         width: 100%;
         display: block;
+        z-index: -1;
       }
 
 
+    }   
+  }
+
+
+  &.open {
+    transform: translateX(-50%);
+    #burger-menu {
+
+      span {
+        height: 4px;
+        position: relative;
+        top: 50%;
+
+        &:before {
+          top: 200%;
+        }
+
+        &:after {
+          top: -200%;
+        }
+      }
     }
 
   }
@@ -154,10 +150,23 @@ header {
   height: 50px;
 }
 
-.wrapper {
-  width: 90%;
+
+.contain {
+  width: 100%;
   max-width: 1080px;
   margin: 0 auto;
+
+  @media(max-width: 768px){
+    &:before {
+      content: '';
+      position: fixed;
+      height: 33554428px;
+      background: inherit;
+      width: 100%;
+      display: block;
+      box-shadow: 10px 0px 25px rgba(50, 50,50,0.3);
+    }
+  }
 }
 
 
@@ -188,6 +197,7 @@ header {
   top: 50%;
   transform: translateY(-50%);
   border-radius: $br;
+  
 
   &:before {
     content: "";
@@ -198,6 +208,8 @@ header {
     position: absolute;
     top: 200%;
     border-radius: $br;
+    // transform: rotate(0deg);
+    // transition: transform 200ms ease-in-out 200ms;
   }
   &:after {
     content: "";
@@ -208,6 +220,8 @@ header {
     position: absolute;
     top: -200%;
     border-radius: $br;
+    // transform: rotate(0deg);
+    // transition: transform 200ms ease-in-out 200ms;
   }
 }
 

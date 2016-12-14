@@ -7,7 +7,7 @@
   </head>
   <body>
 
-  <div class="wrapper">
+  <div class="contain">
 
   <header>
     <?php if ( has_nav_menu( 'main_menu' ) ) : ?>

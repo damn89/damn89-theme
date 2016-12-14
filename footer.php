@@ -13,7 +13,7 @@
         </div>
       <?php endif; ?>
     </footer>
-    </div> <!-- end wrapper-->
+    </div> <!-- end contain-->
   </body>
 </html>
 
